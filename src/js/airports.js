@@ -22,7 +22,7 @@ var geojsonMarkerOptions = {
     fillOpacity: 1
 };
 
-var o = L.geoJson(airport, {
+var m = L.geoJson(airport, {
 					pointToLayer: function (feature, latlng) {
 					return L.circleMarker(latlng, geojsonMarkerOptions);
 				},
