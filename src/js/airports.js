@@ -13,3 +13,22 @@ var airport =
 { "type": "Feature", "properties": { "Type":"Airport", "Name": "Tim's Airport" }, "geometry": { "type": "Point", "coordinates": [ -75.62777412299036, 38.433317847921863 ] } }
 ]
 }
+var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#a6cee3",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 1
+};
+
+var o = L.geoJson(airport, {
+					pointToLayer: function (feature, latlng) {
+					return L.circleMarker(latlng, geojsonMarkerOptions);
+				},
+						onEachFeature: function (feature, layer){
+							popupOptions = {maxWidth: 250};
+							layer.bindPopup(feature.properties.Name
+							,popupOptions);
+							}
+						});	
