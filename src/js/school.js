@@ -27,8 +27,8 @@ var schools =
 { "type": "Feature", "properties": { "School_Typ": "Special Education", "School_Nam": "Wicomico High School", "Grades": "9-12" }, "geometry": { "type": "Point", "coordinates": [ -75.579409302403846, 38.365101560951906 ] } },
 { "type": "Feature", "properties": { "School_Typ": "Middle", "School_Nam": "Wicomico Middle School", "Grades": "6-8" }, "geometry": { "type": "Point", "coordinates": [ -75.589078461796603, 38.365528431325103 ] } },
 { "type": "Feature", "properties": { "School_Typ": "Elementary", "School_Nam": "Willards Elementary School", "Grades": "PreK-3" }, "geometry": { "type": "Point", "coordinates": [ -75.356534041088892, 38.393981467733987 ] } },
-{ "type": "Feature", "properties": { "School_Typ": "University","sitename": "Salisbury University" }, "geometry": { "type": "Point", "coordinates": [ -75.607368793395224, 38.343398752249001 ] } },
-{ "type": "Feature", "properties": { "School_Typ": "Community College","sitename": "Wor-Wic Community College" }, "geometry": { "type": "Point", "coordinates": [ -75.501396155396847, 38.373836769401507 ] } }
+{ "type": "Feature", "properties": { "School_Typ": "University","School_Nam": "Salisbury University" }, "geometry": { "type": "Point", "coordinates": [ -75.607368793395224, 38.343398752249001 ] } },
+{ "type": "Feature", "properties": { "School_Typ": "Community College","School_Nam": "Wor-Wic Community College" }, "geometry": { "type": "Point", "coordinates": [ -75.501396155396847, 38.373836769401507 ] } }
 ]
 
 var geojsonMarkerOptions = {
