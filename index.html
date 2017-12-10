@@ -17,6 +17,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 				
 		<!-- GeoJSON overlays -->
+		<script src="./src/js/airports.js"></script>
 		<script src="./src/js/breweries.js"></script>
 		<script src="./src/js/buildings.js"></script>
 		<script src="./src/js/field.js"></script>
@@ -47,6 +48,7 @@
 			var gShp = L.layerGroup([g]) // Schools
 			var kShp = L.layerGroup([k]) // library
 			var lShp = L.layerGroup([l]) // Hospitals
+			var mShp = L.layerGroup([m]) // Airports
 			var nShp = L.layerGroup([n]) // Police
 			var oShp = L.layerGroup([o]) // Breweries
 			var qShp = L.layerGroup([q]) // shoretransit
@@ -69,7 +71,7 @@
 				
 			// Set Map Extent, View, and Default Layers
 			var map = L.map('map', {
-				layers: [basemap,gShp,kShp,lShp]
+				layers: [basemap,gShp,kShp,lShp,mShp]
 				}).setView([ 38.3448679, -75.6069622], 11);
 				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
@@ -85,6 +87,7 @@
 				"Atheltic Fields":aShp,
 				"Buildings":bShp,
 				"Parking Lots":cShp,
+				"Airports":mShp
 				"Schools":gShp,
 				"Library":kShp,
 				"Hospitals":lShp,
