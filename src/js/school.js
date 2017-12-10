@@ -30,7 +30,7 @@ var schools =
 { "type": "Feature", "properties": { "School_Typ": "University","School_Nam": "Salisbury University" }, "geometry": { "type": "Point", "coordinates": [ -75.607368793395224, 38.343398752249001 ] } },
 { "type": "Feature", "properties": { "School_Typ": "Community College","School_Nam": "Wor-Wic Community College" }, "geometry": { "type": "Point", "coordinates": [ -75.501396155396847, 38.373836769401507 ] } }
 ]
-
+}
 var geojsonMarkerOptions = {
     radius: 8,
     fillColor: "#984ea3",
