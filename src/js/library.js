@@ -6,7 +6,7 @@ var library =
 { "type": "Feature", "properties": { "Type":"Library", "Name": "Centre Branch" }, "geometry": { "type": "Point", "coordinates": [ -75.571642191776235, 38.39820026197755 ] } },
 { "type": "Feature", "properties": { "Type":"Library", "Name": "Bivalve Station Branch" }, "geometry": { "type": "Point", "coordinates": [ -75.509476038745149, 38.340173794850223 ] } },
 { "type": "Feature", "properties": { "Type":"Library", "Name": "Pittsville Branch" }, "geometry": { "type": "Point", "coordinates": [ -75.616927131224642, 38.412753855650514 ] } },
-{ "type": "Feature", "properties": { "Type":"Library", "Name": "Salisbury University Librar" }, "geometry": { "type": "Point", "coordinates": [ -75.600796184279019, 38.364741270723009 ] } },
+{ "type": "Feature", "properties": { "Type":"Library", "Name": "Salisbury University Library" }, "geometry": { "type": "Point", "coordinates": [ -75.604809, 38.346380] } },
 { "type": "Feature", "properties": { "Type":"Library", "Name": "Wor-Wic Community College Library" }, "geometry": { "type": "Point", "coordinates": [ -75.502673214777801, 38.373757264907752 ] } },
 { "type": "Feature", "properties": { "Type":"Library", "Name": "Eastern Shore Regional Library" }, "geometry": { "type": "Point", "coordinates": [ -75.600791609159273, 38.364674197835214 ] } }
 ]
