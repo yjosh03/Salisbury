@@ -46,7 +46,7 @@ var g = L.geoJson(schools, {
 				},
 						onEachFeature: function (feature, layer){
 							popupOptions = {maxWidth: 250};
-							layer.bindPopup(feature.properties.School_Nam + ' ' + feature.properties.School_Typ
+							layer.bindPopup(feature.properties.School_Nam
 							,popupOptions);
 							}
 						});	
