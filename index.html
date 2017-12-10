@@ -17,19 +17,19 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 				
 		<!-- GeoJSON overlays -->
-		<script src="./src/js/field.js"></script>
-		<script src="./src/js/buildings.js"></script>
-		<script src="./src/js/parking.js"></script>
-		<script src="./src/js/watersheds_12.js"></script>
-		<script src="./src/js/school.js"></script>
-		<script src="./src/js/police.js"></script>
-		<script src="./src/js/library.js"></script>
-		<script src="./src/js/hospitals.js"></script>
 		<script src="./src/js/breweries.js"></script>
-		<script src="./src/js/shoretransit.js"></script>
+		<script src="./src/js/buildings.js"></script>
+		<script src="./src/js/field.js"></script>
+		<script src="./src/js/hospitals.js"></script>
+		<script src="./src/js/library.js"></script>
+		<script src="./src/js/parking.js"></script>
+		<script src="./src/js/police.js"></script>
 		<script src="./src/js/rivers.js"></script>
-		<script src="./src/js/zip_codes.js"></script>
+		<script src="./src/js/school.js"></script>
+		<script src="./src/js/shoretransit.js"></script>
+		<script src="./src/js/watersheds_12.js"></script>
 		<script src="./src/js/watersheds_8.js"></script>
+		<script src="./src/js/zip_codes.js"></script>
 		
 	
 	</head>
@@ -69,8 +69,8 @@
 				
 			// Set Map Extent, View, and Default Layers
 			var map = L.map('map', {
-				layers: [basemap,kShp,lShp,oShp,nShp]
-				}).setView([ 38.3448679, -75.6069622], 12);
+				layers: [basemap]
+				}).setView([ 38.3448679, -75.6069622], 11);
 				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 		
