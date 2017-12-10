@@ -1,0 +1,116 @@
+<!doctype html>
+
+<!-- Coded by Josh Young
+		-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Salisbury General</title>
+			
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="./Leaflet-1.2.0/leaflet.css"/>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="./src/styles/leaflet.awesome-markers.css">
+		<link rel="stylesheet" href="./src/styles/css.css"/>				
+		
+		<script src="./Leaflet-1.2.0/leaflet.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="./src/styles/leaflet_awesome_markers.js"></script>
+				
+		<!-- GeoJSON overlays -->
+		<script src="./src/js/field.js"></script>
+		<script src="./src/js/buildings.js"></script>
+		<script src="./src/js/parking.js"></script>
+		<script src="./src/js/watersheds_12.js"></script>
+		<script src="./src/js/school.js"></script>
+		<script src="./src/js/police.js"></script>
+		<script src="./src/js/library.js"></script>
+		<script src="./src/js/hospitals.js"></script>
+		<script src="./src/js/breweries.js"></script>
+		<script src="./src/js/shoretransit.js"></script>
+		<script src="./src/js/rivers.js"></script>
+		<script src="./src/js/zip_codes.js"></script>
+		<script src="./src/js/watersheds_8.js"></script>
+		
+	
+	</head>
+		<body>
+			<div id="map"></div>
+			
+			<script>
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				
+			// Call geoJson and styles from js	
+			var aShp = L.layerGroup([a]),
+				bShp = L.layerGroup([b]),
+			    	cShp = L.layerGroup([c]),
+				eShp = L.layerGroup([e]),
+			   	gShp = L.layerGroup([g]),
+				kShp = L.layerGroup([k]),
+				lShp = L.layerGroup([l]),
+				nShp = L.layerGroup([n]),
+				oShp = L.layerGroup([o]),
+				qShp = L.layerGroup([q]),
+				tShp = L.layerGroup([t]),
+				uShp = L.layerGroup([u]),
+				vShp = L.layerGroup([v])
+			
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				
+			// Set-Up Background images
+			var basemap = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+             			 maxZoom: 17
+			});
+			var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				name:'imagery',
+				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+			});
+				
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				
+			// Set Map Extent, View, and Default Layers
+			var map = L.map('map', {
+				layers: [basemap,kShp,lShp,oShp,nShp,gShp]
+				}).setView([ 38.3448679, -75.6069622], 12);
+				
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+		
+			// Create basemaps variable to call within the control
+			var baseMaps = {
+				"Black and White":basemap,
+				"ESRI Imagery":Esri_WorldImagery
+			};
+			
+			// Create overlays variable to call within the control. Calls layer groups
+			var overLays = {
+				"Atheltic Fields":aShp,
+				"Buildings":bShp,
+				"Parking Lots":cShp,
+				"Schools":gShp
+				"Library":kShp,
+				"Hospitals":lShp,
+				"Police Stations":nShp,
+				"Breweries":oShp,			
+				"Shore Transit":qShp,
+				"Rivers":tShp,
+				"Zip Codes":uShp,
+				"Watershed 12":eShp,
+				"Watershed 8":vShp,
+				"Zip Codes":uShp
+			};
+			
+			//add control to map
+			L.control.layers(baseMaps,overLays,{collapse:false}).addTo(map);
+		
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				
+			// Add scale to map
+			L.control.scale({position:'bottomright'}).addTo(map);		
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////				
+							
+			</script>
+			
+		</body>
