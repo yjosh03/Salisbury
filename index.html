@@ -90,7 +90,7 @@
 			var map = L.map('map', {
 				layers: [Stamen_Watercolor,Stamen_TonerHybrid,dShp],
 				minZoom:11
-			}).setView([ 38.36487, -75.6069622],11.2);
+			}).setView([ 38.36487, -75.6069622],11);
 				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 		
@@ -144,6 +144,10 @@
 			function zoom_based_layerchange() {
 			    var currentZoom = map.getZoom();
 			    switch (currentZoom) {
+				case 12:
+				    clean_map();
+				    dShp.addTo(map); 
+				    break;
 				case 13:
 				    clean_map();
 				    kShp.addTo(map);
@@ -151,6 +155,7 @@
 				    mShp.addTo(map);
 				    gShp.addTo(map);
 				    nShp.addTo(map);
+				    oShp.addTo(map);
 				    break;
 				case 16:
 				    clean_map();
