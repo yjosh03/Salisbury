@@ -102,7 +102,7 @@
 				"Breweries":oShp
 			      },
 			      "Salisbury University": {
-				"Atheltic Fields":aShp,
+				"Athletic Fields":aShp,
 				"Buildings":bShp,
 				"Parking Lots":cShp
 			      }
@@ -119,7 +119,7 @@
 				
 			map.on('overlayadd', function (eventLayer) {
 			    // if layer added zoom to bounds of layer
-			    if (eventLayer.name === "Atheltic Fields" ) {
+			    if (eventLayer.name === "Athletic Fields" ) {
 				map.fitBounds(aShp.getBounds())
 			    }
 			    if (eventLayer.name === "Buildings" ) {
