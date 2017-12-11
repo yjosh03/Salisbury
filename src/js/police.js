@@ -25,7 +25,7 @@ var n = L.geoJSON(police, {
 				},
 				onEachFeature: function (feature, layer){
 					popupOptions = {maxWidth: 250};
-					layer.bindPopup(feature.properties.Name + feature.properties.Type
+					layer.bindPopup(feature.properties.Name +" "+ feature.properties.Type
 					,popupOptions);
 					}
 });	
