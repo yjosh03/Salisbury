@@ -82,14 +82,13 @@
 				"Black and White":basemap,
 				"ESRI Imagery":Esri_WorldImagery
 			};
-			
 			// Create overlays variable to call within the control. Calls layer groups
 			var overLays = {
 				"Atheltic Fields":aShp,
 				"Buildings":bShp,
 				"Parking Lots":cShp
 			};
-			var poverlays = {
+			var pointlays = {
 				"Airports":mShp,
 				"Schools":gShp,
 				"Library":kShp,
@@ -97,20 +96,19 @@
 				"Police Stations":nShp,
 				"Breweries":oShp							
 			};
-			var loverLays = {
+			var polyLays = {
 				"Shore Transit":qShp,
 				"County Boundary": dShp,
 				"Watershed 12":eShp,
 				"Watershed 8":vShp,
 				"Zip Codes":uShp
 			};
-				
 			
 			//add control to map
 			L.control.layers(baseMaps).addTo(map);
 			L.control.layers('',overlays).addTo(map);
-			L.control.layers('',poverlays).addTo(map);
-			L.control.layers('',loverlays).addTo(map);
+			L.control.layers('',pointlays).addTo(map);
+			L.control.layers('',polyLays).addTo(map);
 		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
