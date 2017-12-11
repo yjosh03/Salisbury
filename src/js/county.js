@@ -14,7 +14,7 @@ var myStyle = {
     "weight": 2,
     "opacity": .65
 };
-var u = L.geoJson(counties, {
+var d = L.geoJson(counties, {
 					style: myStyle,
 						onEachFeature: function (feature, layer){
 							popupOptions = {maxWidth: 250};
