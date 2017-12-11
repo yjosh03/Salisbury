@@ -114,7 +114,52 @@
 			// Add scale to map
 			L.control.scale({position:'bottomright'}).addTo(map);		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				
+			
+			function clean_map() {
+			    map.eachLayer(function (layer) {
+				if (layer instanceof L.GeoJSON)
+				//Do marker specific actions here
+				{
+				    map.removeLayer(layer);
+				}
+				console.log(layer);
+			    });
+			}
+
+			function zoom_based_layerchange() {
+			    //console.log(map.getZoom());
+			    var currentZoom = map.getZoom();
+			    switch (currentZoom) {
+				case 12:
+				    clean_map();
+				    vShp.addTo(map); //show watershed and zip codes
+						uShp.addTo(map); //show watershed and zip codes
+				    break;
+				case 13:
+				    clean_map();
+				    gShp.addTo(map);
+				    kShp.addTo(map);
+				    lShp.addTo(map);
+				    mShp.addTo(map);
+				    nShp.addTo(map);
+				    // show Campus
+				    break;
+				case 16:
+				    clean_map();
+						aShp.addTo(map);
+						bShp.addTo(map);
+						cShp.addTo(map);
+				    // show rental
+				    break;
+
+				default:
+				    // do nothing
+				    break;
+			    }
+			}
+			map.on('zoomend', function (e) {
+			    zoom_based_layerchange();
+			});
 			
 			</script>
 			
