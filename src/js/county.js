@@ -1,4 +1,4 @@
-var county = 
+var counties = 
 {
 "type": "FeatureCollection",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
@@ -14,7 +14,7 @@ var myStyle = {
     "weight": 2,
     "opacity": .65
 };
-var u = L.geoJson(county, {
+var u = L.geoJson(counties, {
 					style: myStyle,
 						onEachFeature: function (feature, layer){
 							popupOptions = {maxWidth: 250};
