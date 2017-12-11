@@ -69,7 +69,7 @@
 				maxZoom: 16,
 				ext: 'png'
 			});
-			var Stamen_TonerLabels = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.{ext}', {
+			var Stamen_TonerHybrid = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}.{ext}', {
 				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 				subdomains: 'abcd',
 				minZoom: 0,
@@ -81,7 +81,7 @@
 				
 			// Set Map Extent, View, and Default Layers
 			var map = L.map('map', {
-				layers: [Stamen_Watercolor,Stamen_TonerLabels,dShp],
+				layers: [Stamen_Watercolor,Stamen_TonerHybrid,dShp],
 				minZoom:11
 				}).setView([ 38.36487, -75.6069622],11);
 				
@@ -95,7 +95,7 @@
 			// Create overlays variable to call within the control. Calls layer groups
 			var groupedOverlays = {
 			      "Eastern Shore": {
-				"Labels":Stamen_TonerLabels,
+				"Labels":Stamen_TonerHybrid,
 				"County Boundary": dShp,
 				"Shore Transit":qShp,
 				"Watershed 8":vShp,
