@@ -62,11 +62,16 @@ var water_12 =
 ]
 }
 
+var myStyle = {
+    "color": "#00ddff",
+    "weight": 2,
+    "opacity": 1
+};
 var e = L.geoJson(water_12, {
-					style: {color: "#000000", fillColor: "#2471A3", fillOpacity: .2},
+					style: myStyle,
 						onEachFeature: function (feature, layer){
 							popupOptions = {maxWidth: 250};
 							layer.bindPopup(feature.properties.mde8name
 							,popupOptions);
 							}
-						});
+						});	
