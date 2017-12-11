@@ -24,11 +24,11 @@ var myStyle = {
     "weight": 5,
     "opacity": 1
 };
-var u = L.geoJson(transit, {
-					style: myStyle,
-						onEachFeature: function (feature, layer){
-							popupOptions = {maxWidth: 250};
-							layer.bindPopup(feature.properties.rt_long_nm
-							,popupOptions);
-							}
-						});	
+var q = L.geoJson(transit, {
+	style: myStyle,
+		onEachFeature: function (feature, layer){
+			popupOptions = {maxWidth: 250};
+			layer.bindPopup(feature.properties.route_id
+			,popupOptions);
+			}
+		});	
