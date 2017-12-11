@@ -106,7 +106,31 @@
 			L.control.scale({position:'bottomright'}).addTo(map);		
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-							
+			map.on('zoomend', function() {
+			    if (map.getZoom() <15){
+					if (map.hasLayer("Parking Lots")) {
+						map.removeLayer("Parking Lots");
+					}
+					if (map.hasLayer("Atheltic Fields")) {
+						map.removeLayer("Atheltic Fields");
+					}
+					if (map.hasLayer("Buildings")) {
+						map.removeLayer("Buildings");
+					}
+			    }
+			    if (map.getZoom() >13){
+					if (map.hasLayer("Watershed 12")){
+						map.removeLayer("Watershed 12");
+					} 
+					if (map.hasLayer("Watershed 8")){
+						map.removeLayer("Watershed 8");
+					}
+					if (map.hasLayer("Zip Codes")){
+						map.removeLayer("Zip Codes");
+					}
+			    }
+			}
+			       
 			</script>
 			
 		</body>
