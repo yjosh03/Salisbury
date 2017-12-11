@@ -85,35 +85,7 @@
 				"ESRI Imagery":Esri_WorldImagery
 			};
 			// Create overlays variable to call within the control. Calls layer groups
-			var overLays = {
-				"Atheltic Fields":aShp,
-				"Buildings":bShp,
-				"Parking Lots":cShp
-			};
-			var pointLays = {
-				"Airports":mShp,
-				"Schools":gShp,
-				"Library":kShp,
-				"Hospitals":lShp,
-				"Police Stations":nShp,
-				"Breweries":oShp							
-			};
-			var polyLays = {
-				"Shore Transit":qShp,
-				"County Boundary": dShp,
-				"Watershed 12":eShp,
-				"Watershed 8":vShp,
-				"Zip Codes":uShp
-			};
-			
-			//add control to map
-		//	L.control.layers(baseMaps).addTo(map);
-		//	L.control.layers(null,overLays).addTo(map);
-		//	L.control.layers(null,pointLays).addTo(map);
-		//	L.control.layers(null,polyLays).addTo(map);
-				
-				
-			 var groupedOverlays = {
+			var groupedOverlays = {
 			      "Eastern Shore": {
 				"Shore Transit":qShp,
 				"County Boundary": dShp,
@@ -144,6 +116,19 @@
 			L.control.scale({position:'bottomright'}).addTo(map);		
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				
+			map.on('overlayadd', function (eventLayer) {
+			    // if layer added zoom to bounds of layer
+			    if (eventLayer.name === "Atheltic Fields" ) {
+				map.fitBounds(aShp.getBounds())
+			    }
+			    if (eventLayer.name === "Buildings" ) {
+				map.fitBounds(bShp.getBounds())
+			    }
+			    if (eventLayer.name === "Parking Lots" ) {
+				map.fitBounds(cShp.getBounds())
+			    }
+			});
 			
 			</script>
 			
