@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="utf-8">
 		
-		<title>Airbus Sly I</title>
+		<title>Airbus Sly</title>
 			
 		<!-- Stylesheets -->
 		<link rel="stylesheet" href="./Leaflet-1.2.0/leaflet.css"/>
@@ -115,18 +115,6 @@
 			L.control.scale({position:'bottomright'}).addTo(map);		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
-			map.on('overlayadd', function (eventLayer) {
-			    // if layer added zoom to bounds of layer
-			    if (eventLayer.name == "Salisbury University" ) {
-				map.fitBounds(bShp.getBounds());
-			    }
-			    if (eventLayer.name == "Buildings" ) {
-				map.fitBounds(bShp.getBounds());
-			    }
-			    if (eventLayer.name == "Parking Lots" ) {
-				map.fitBounds(cShp.getBounds());
-			    }
-			});
 			
 			</script>
 			
