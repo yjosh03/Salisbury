@@ -30,7 +30,6 @@
 		<script src="./src/js/police.js"></script>
 		<script src="./src/js/school.js"></script>
 		<script src="./src/js/shoretransit.js"></script>
-		<script src="./src/js/watersheds_12.js"></script>
 		<script src="./src/js/watersheds_8.js"></script>
 		<script src="./src/js/zip_codes.js"></script>
 		
@@ -47,7 +46,6 @@
 			var bShp = L.layerGroup([b]) // salisbury buildings
 			var cShp = L.layerGroup([c]) // salisbury parking lots
 			var dShp = L.layerGroup([d]) // County boundaries
-			var eShp = L.layerGroup([e]) // water_12
 			var gShp = L.layerGroup([g]) // Schools
 			var kShp = L.layerGroup([k]) // Library
 			var lShp = L.layerGroup([l]) // Hospitals
@@ -73,7 +71,7 @@
 				
 			// Set Map Extent, View, and Default Layers
 			var map = L.map('map', {
-				layers: [basemap,kShp,lShp,mShp,nShp,dShp],
+				layers: [basemap,dShp,kShp,lShp,mShp,nShp],
 				minZoom:11
 				}).setView([ 38.36487, -75.6069622],11);
 				
@@ -87,19 +85,18 @@
 			// Create overlays variable to call within the control. Calls layer groups
 			var groupedOverlays = {
 			      "Eastern Shore": {
-				"Shore Transit":qShp,
 				"County Boundary": dShp,
-				"Watershed 12":eShp,
+				"Shore Transit":qShp,
 				"Watershed 8":vShp,
 				"Zip Codes":uShp
 			      },
 			      "Wicomico County": {
 				"Airports":mShp,
-				"Schools":gShp,
-				"Library":kShp,
+				"Breweries":oShp,
 				"Hospitals":lShp,
+				"Library":kShp,
 				"Police Stations":nShp,
-				"Breweries":oShp
+				"Schools":gShp
 			      },
 			      "Salisbury University": {
 				"Athletic Fields":aShp,
@@ -109,6 +106,7 @@
 			    };
 			    // Use the custom grouped layer control, not "L.control.layers"
 			L.control.groupedLayers(baseMaps, groupedOverlays,{collapsed:false}).addTo(map);
+				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
 			// Add scale to map
@@ -120,7 +118,7 @@
 			    map.eachLayer(function (layer) {
 				if (layer instanceof L.GeoJSON)
 				{
-				    map.removeLayer(layer);
+			    map.removeLayer(layer);
 				}
 				console.log(layer);
 			    });
@@ -131,26 +129,22 @@
 			    switch (currentZoom) {
 				case 12:
 				    clean_map();
-				    vShp.addTo(map); //show watershed and zip codes
-				    uShp.addTo(map); //show watershed and zip codes
+				    uShp.addTo(map); //show zipcodes
 				    break;
 				case 13:
 				    clean_map();
-				    gShp.addTo(map);
 				    kShp.addTo(map);
 				    lShp.addTo(map);
 				    mShp.addTo(map);
+				    gShp.addTo(map);
 				    nShp.addTo(map);
-				    // show Campus
 				    break;
 				case 16:
 				    clean_map();
 				    aShp.addTo(map);
 				    bShp.addTo(map);
 				    cShp.addTo(map);
-				    // show rental
 				    break;
-
 				default:
 				    // do nothing
 				    break;
