@@ -20,7 +20,7 @@ var transit = {
 }
 
 var myStyle = {
-    "color": "#ff0000",
+    "color": "#ff5900",
     "weight": 5,
     "opacity": 1
 };
