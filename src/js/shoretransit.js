@@ -19,11 +19,16 @@ var transit = {
 ]
 }
 
-var q = L.geoJson(transit, {
-					style: {color: "#000000", fillColor: "#2471A3", fillOpacity: .2},
+var myStyle = {
+    "color": "#ff0000",
+    "weight": 5,
+    "opacity": 1
+};
+var u = L.geoJson(transit, {
+					style: myStyle,
 						onEachFeature: function (feature, layer){
 							popupOptions = {maxWidth: 250};
 							layer.bindPopup(feature.properties.rt_long_nm
 							,popupOptions);
 							}
-						});
+						});	
