@@ -108,17 +108,17 @@
 			      }
 			    };
 			    // Use the custom grouped layer control, not "L.control.layers"
-			    L.control.groupedLayers(baseMaps, groupedOverlays,{collapsed:false}).addTo(map);
+			L.control.groupedLayers(baseMaps, groupedOverlays,{collapsed:false}).addTo(map);
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
 			// Add scale to map
-			L.control.scale({position:'bottomright'}).addTo(map);		
+			L.control.scale({position:'bottomright'}).addTo(map);
+				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			
 			function clean_map() {
 			    map.eachLayer(function (layer) {
 				if (layer instanceof L.GeoJSON)
-				//Do marker specific actions here
 				{
 				    map.removeLayer(layer);
 				}
@@ -127,13 +127,12 @@
 			}
 
 			function zoom_based_layerchange() {
-			    //console.log(map.getZoom());
 			    var currentZoom = map.getZoom();
 			    switch (currentZoom) {
 				case 12:
 				    clean_map();
 				    vShp.addTo(map); //show watershed and zip codes
-						uShp.addTo(map); //show watershed and zip codes
+				    uShp.addTo(map); //show watershed and zip codes
 				    break;
 				case 13:
 				    clean_map();
@@ -146,9 +145,9 @@
 				    break;
 				case 16:
 				    clean_map();
-						aShp.addTo(map);
-						bShp.addTo(map);
-						cShp.addTo(map);
+				    aShp.addTo(map);
+				    bShp.addTo(map);
+				    cShp.addTo(map);
 				    // show rental
 				    break;
 
@@ -157,7 +156,7 @@
 				    break;
 			    }
 			}
-			map.on('zoomend', function (e) {
+			map.on('zoomanim', function (e) {
 			    zoom_based_layerchange();
 			});
 			
