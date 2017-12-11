@@ -87,22 +87,30 @@
 			var overLays = {
 				"Atheltic Fields":aShp,
 				"Buildings":bShp,
-				"Parking Lots":cShp,
+				"Parking Lots":cShp
+			};
+			var poverlays = {
 				"Airports":mShp,
 				"Schools":gShp,
 				"Library":kShp,
 				"Hospitals":lShp,
 				"Police Stations":nShp,
-				"Breweries":oShp,			
+				"Breweries":oShp,							
+			};
+			var loverLays = {
 				"Shore Transit":qShp,
 				"County Boundary": dShp,
 				"Watershed 12":eShp,
 				"Watershed 8":vShp,
 				"Zip Codes":uShp
 			};
+				
 			
 			//add control to map
-			L.control.layers(baseMaps,overLays).addTo(map);
+			L.control.layers(baseMaps).addTo(map);
+			L.control.layers(,overlays).addTo(map);
+			L.control.layers(,poverlays).addTo(map);
+			L.control.layers(,loverlays).addTo(map);
 		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
