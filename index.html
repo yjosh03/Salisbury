@@ -105,10 +105,10 @@
 			};
 			
 			//add control to map
+			L.control.layers(baseMaps).addTo(map);
 			L.control.layers(null,overlays).addTo(map);
 			L.control.layers(null,pointlays).addTo(map);
 			L.control.layers(null,polyLays).addTo(map);
-			L.control.layers(baseMaps).addTo(map);
 		
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
