@@ -130,6 +130,18 @@
 			// Add scale to map
 			L.control.scale({position:'bottomright'}).addTo(map);
 				
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////				
+				
+			// Set up legend
+			var bLegend = L.control({position: 'bottomright'});
+			bLegend.onAdd = function (map) {
+				var div = L.DomUtil.create('div', 'info legend');
+					div.innerHTML +=
+					'<img src="./src/images/salis_leg.png" alt="legend1" width="140" height="147">';
+				return div;
+				};
+			bLegend.addTo(map);
+				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			
 			function clean_map() {
