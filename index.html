@@ -121,20 +121,7 @@
 			L.control.scale({position:'bottomright'}).addTo(map);		
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				
-			map.on('overlayadd', function (e) {
-			    // if layer added zoom to bounds of layer
-			    if (eventLayer.name === "Salisbury University" ) {
-				map.fitBounds(e.Layer.getBounds());
-			    }
-			    if (eventLayer.name === "Buildings" ) {
-				map.fitBounds(e.Layer.getBounds());
-			    }
-			    if (eventLayer.name === "Parking Lots" ) {
-				map.fitBounds(e.Layer.getBounds());
-			    }
-			});
-			
+						
 			</script>
 			
 		</body>
