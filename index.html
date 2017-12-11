@@ -107,11 +107,37 @@
 			};
 			
 			//add control to map
-			L.control.layers(baseMaps).addTo(map);
-			L.control.layers(null,overLays).addTo(map);
-			L.control.layers(null,pointLays).addTo(map);
-			L.control.layers(null,polyLays).addTo(map);
-		
+		//	L.control.layers(baseMaps).addTo(map);
+		//	L.control.layers(null,overLays).addTo(map);
+		//	L.control.layers(null,pointLays).addTo(map);
+		//	L.control.layers(null,polyLays).addTo(map);
+				
+				
+			 var groupedOverlays = {
+			      "Salisbury University": {
+				"Atheltic Fields":aShp,
+				"Buildings":bShp,
+				"Parking Lots":cShp
+			      },
+			      "Wicomico County": {
+				"Airports":mShp,
+				"Schools":gShp,
+				"Library":kShp,
+				"Hospitals":lShp,
+				"Police Stations":nShp,
+				"Breweries":oShp
+			      },
+			      "Eastern Shore": {
+				"Shore Transit":qShp,
+				"County Boundary": dShp,
+				"Watershed 12":eShp,
+				"Watershed 8":vShp,
+				"Zip Codes":uShp
+			      }
+			    };
+			    // Use the custom grouped layer control, not "L.control.layers"
+			    L.control.groupedLayers(baseMaps, groupedOverlays).addTo(map);
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
 			// Add scale to map
