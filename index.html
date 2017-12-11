@@ -62,10 +62,6 @@
 			var basemap = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
              			 maxZoom: 17
 			});
-			var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-				name:'imagery',
-				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-			});
 			var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
 				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 				subdomains: 'abcd',
@@ -85,7 +81,7 @@
 				
 			// Set Map Extent, View, and Default Layers
 			var map = L.map('map', {
-				layers: [Stamen_Watercolor,dShp],
+				layers: [Stamen_Watercolor,Stamen_TonerLabels,dShp],
 				minZoom:11
 				}).setView([ 38.36487, -75.6069622],11);
 				
@@ -94,13 +90,11 @@
 			// Create basemaps variable to call within the control
 			var baseMaps = {
 				"Black and White":basemap,
-				"ESRI Imagery":Esri_WorldImagery,
 				"Watercolor":Stamen_Watercolor
 			};
 			// Create overlays variable to call within the control. Calls layer groups
 			var groupedOverlays = {
 			      "Eastern Shore": {
-				"Stamen Labels":Stamen_TonerLabels,
 				"County Boundary": dShp,
 				"Shore Transit":qShp,
 				"Watershed 8":vShp,
