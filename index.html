@@ -20,6 +20,7 @@
 		<script src="./src/js/airports.js"></script>
 		<script src="./src/js/breweries.js"></script>
 		<script src="./src/js/buildings.js"></script>
+		<script src="./src/js/county.js"></script>
 		<script src="./src/js/field.js"></script>
 		<script src="./src/js/hospitals.js"></script>
 		<script src="./src/js/library.js"></script>
@@ -43,6 +44,7 @@
 			var aShp = L.layerGroup([a]) // Athletic Fields
 			var bShp = L.layerGroup([b]) // salisbury buildings
 			var cShp = L.layerGroup([c]) // salisbury parking lots
+			var dShp = L.layerGroup([d]) // County boundaries
 			var eShp = L.layerGroup([e]) // water_12
 			var gShp = L.layerGroup([g]) // Schools
 			var kShp = L.layerGroup([k]) // Library
@@ -69,7 +71,7 @@
 				
 			// Set Map Extent, View, and Default Layers
 			var map = L.map('map', {
-				layers: [basemap,kShp,lShp,mShp,nShp]
+				layers: [basemap,kShp,lShp,mShp,nShp,dShp]
 				}).setView([ 38.3448679, -75.6069622],11);
 				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
@@ -92,6 +94,7 @@
 				"Police Stations":nShp,
 				"Breweries":oShp,			
 				"Shore Transit":qShp,
+				"County Boundary": dShp,
 				"Watershed 12":eShp,
 				"Watershed 8":vShp,
 				"Zip Codes":uShp
