@@ -85,6 +85,8 @@
 				minZoom:11
 				}).setView([ 38.36487, -75.6069622],11);
 				
+			Stamen_TonerLabels
+				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 		
 			// Create basemaps variable to call within the control
@@ -95,6 +97,7 @@
 			// Create overlays variable to call within the control. Calls layer groups
 			var groupedOverlays = {
 			      "Eastern Shore": {
+				"Labels":Stamen_TonerLabels
 				"County Boundary": dShp,
 				"Shore Transit":qShp,
 				"Watershed 8":vShp,
