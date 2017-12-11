@@ -15,8 +15,13 @@ var water_8 =
 ]
 }
 
+var myStyle = {
+    "color": "#0077ff",
+    "weight": 2,
+    "opacity":.2
+};
 var v = L.geoJson(water_8, {
-					style: {color: "#000000", fillColor: "#2471A3", fillOpacity: .2},
+					style: myStyle,
 						onEachFeature: function (feature, layer){
 							popupOptions = {maxWidth: 250};
 							layer.bindPopup(feature.properties.mde8name
