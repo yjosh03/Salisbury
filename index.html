@@ -76,6 +76,13 @@
 				maxZoom: 20,
 				ext: 'png'
 			});
+			var Stamen_TonerBackground = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.{ext}', {
+				attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+				subdomains: 'abcd',
+				minZoom: 0,
+				maxZoom: 20,
+				ext: 'png'
+			});
 				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				
@@ -83,7 +90,7 @@
 			var map = L.map('map', {
 				layers: [Stamen_Watercolor,Stamen_TonerHybrid,dShp],
 				minZoom:11
-				}).setView([ 38.36487, -75.6069622],11);
+			}).setView([ 38.36487, -75.6069622],11);
 				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 		
@@ -134,14 +141,9 @@
 				console.log(layer);
 			    });
 			}
-
 			function zoom_based_layerchange() {
 			    var currentZoom = map.getZoom();
 			    switch (currentZoom) {
-				case 12:
-				    clean_map();
-				    uShp.addTo(map); //show zipcodes
-				    break;
 				case 13:
 				    clean_map();
 				    kShp.addTo(map);
@@ -166,5 +168,4 @@
 			});
 			
 			</script>
-			
 		</body>
