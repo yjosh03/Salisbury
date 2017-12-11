@@ -45,7 +45,7 @@
 			var cShp = L.layerGroup([c]) // salisbury parking lots
 			var eShp = L.layerGroup([e]) // water_12
 			var gShp = L.layerGroup([g]) // Schools
-			var kShp = L.layerGroup([k]) // library
+			var kShp = L.layerGroup([k]) // Library
 			var lShp = L.layerGroup([l]) // Hospitals
 			var mShp = L.layerGroup([m]) // Airports
 			var nShp = L.layerGroup([n]) // Police
@@ -70,8 +70,8 @@
 			// Set Map Extent, View, and Default Layers
 			var map = L.map('map', {
 				layers: [basemap,kShp,lShp,mShp,nShp]
-				}).setView([ 38.3448679, -75.6069622], 17);
-			
+				}).setView([ 38.3448679, -75.6069622], 10);
+				
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 		
 			// Create basemaps variable to call within the control
@@ -105,7 +105,7 @@
 			// Add scale to map
 			L.control.scale({position:'bottomright'}).addTo(map);		
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////				
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 							
 			</script>
 			
